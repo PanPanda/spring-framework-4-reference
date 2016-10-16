@@ -1,7 +1,7 @@
 Bean 总览
 ====
 
-Spring IoC 容易管理一个或者多个 bean。 bean 由应用到到容器的配置元数据创建,例如,在 XML 中定义 `<bean/>` 的形式。
+Spring IoC 容器管理一个或者多个 bean。 bean 由应用到到容器的配置元数据创建,例如,在 XML 中定义 `<bean/>` 的形式。
 
 容器内部,这些 bean 定义表示为 BeanDefinition 对象,其中包含(其他信息)以下元数据:
 
@@ -51,7 +51,7 @@ destruction method | the section called “Destruction callbacks”
 
 	<alias name="fromName" alias="toName"/>
 
-在这种情况下，如果容易中存在名为 fromName 的 bean 定义，在增加别名定义后，也可以用 toName 来引用。
+在这种情况下，如果容器中存在名为 fromName 的 bean 定义，在增加别名定义后，也可以用 toName 来引用。
 
 例如，在子系统 A 中通过名字 subsystemA-dataSource 配置的数据源。在子系统B中可能通过名字 subsystemB-dataSource 来引用。当两个子系统构成主应用的时候，主应用可能通过名字 myApp-dataSource 引用数据源，将全部三个名字引用同一个对象，你可以将下面的别名定义添加到应用配置中：
 
